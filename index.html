@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang= "pt-br">
+
+
+<head>
+<title>Validação de Formulários com JavaScript</title>
+<script type="text/javascript" src="javascript.js"></script>
+
+<style type = "text/css">
+ 
+ form(width: 300px; background: #ccc; margin: 100px auto.;)
+
+</style>
+  
+<meta http-equiv="Content Type" content="text/html"; charset="utf-8"/>
+  <title>Cadastro de clientes</title>
+
+<style>
+
+    form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana,geneva, sans-serif: color:#999;}
+
+    form input {padding: 4px; width: 350px; display: block;}
+
+    form textarea { width: 354px; display: block;}
+
+    form.btn {width: 150px; cursor: pointer;}
+
+</style>
+
+<title>Validacao de formulários com JS</title>
+
+</head>
+
+<body>
+    <form name="form" method="post" action="page2.html" onsubmit="return Validacao ();">
+
+    <header>
+
+        <h1>Cadastro de Clientes.</h1>
+
+    </header>
+
+        <h2>Bem vindo!Preencha os dados abaixo.</h2>
+
+        <form name="Inscrição" method="post" action="page2.html" onsubmit="return Validacao()">
+
+        
+        <fieldset color="red">
+        <legend>Dados Pessoais</legend>
+         
+        <p>
+            <label for="Nome">Nome</label>
+            <input type="text" name="Nome">
+            <label for="data de nascimento">Data de nascimento</label>
+            <input type="date" name="data de nascimento">
+        </p>
+
+        <p>
+            <label for="CPF">CPF</label>
+            <input type="number name"="CPF">
+        </p>
+
+        <p>
+            <label for="estado">Estado Civil</label>
+            <input type="radio" name="estado" vallue="1">solteiro
+            <input type="radio" name="estado" value="2">casado
+        </p>
+
+
+         </fieldset>
+
+         <fieldset color="red">
+
+         <legend>Endereço</legend>
+         <p>
+            <label for="CEP"></label>
+            <input type="number" name="CEP">
+         </p>
+
+         <p>
+            <label  for="tipo">tipo</label>
+            <select name="rua">
+            <option value="1">Avenida</option>
+            <option value="2">Rua</option>
+            <option value="3">Alameda</option>
+
+         </select>
+        </p>
+
+        <p>
+            <label for="Logradouro">Logradouro</label>
+            <input type="text" name="Logradouro">
+            <label type="Número">Número</label>
+            <input type="number" name="Número">
+            <label for="complemento">Complemento</label>
+            <input type="text" name="complemento">
+        </p>
+
+        <p>
+            <input type="submit" name="enviar" value="Enviar inscrição" class="btn"/>
+            <input type="reset" name="cancelar" value="Cancelar">
+
+        </p>
+
+
+        </fieldset>
+
+
