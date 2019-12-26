@@ -3,36 +3,35 @@
 
 
 <head>
-<title>Validação de Formulários com JavaScript</title>
-<script type="text/javascript" src="javascript.js"></script>
 
 <style type = "text/css">
  
  form(width: 300px; background: #ccc; margin: 100px auto.;)
 
 </style>
-  
+ 
 <meta http-equiv="Content Type" content="text/html"; charset="utf-8"/>
   <title>Cadastro de clientes</title>
+ 
 
 <style>
 
-    form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana,geneva, sans-serif: color:#999;}
+    form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana, geneva, sans-serif: color:#999;}
 
     form input {padding: 4px; width: 350px; display: block;}
 
-    form textarea { width: 354px; display: block;}
+    form textarea {width: 354px; display: block;}
 
     form.btn {width: 150px; cursor: pointer;}
 
 </style>
 
-<title>Validacao de formulários com JS</title>
-
 </head>
 
 <body>
-    <form name="form" method="post" action="page2.html" onsubmit="return Validacao ();">
+
+    <form name="formcadastro" method="post" action="salva_mensagem.html" onsubmit="return Validacao()">
+
 
     <header>
 
@@ -42,9 +41,7 @@
 
         <h2>Bem vindo!Preencha os dados abaixo.</h2>
 
-        <form name="Inscrição" method="post" action="page2.html" onsubmit="return Validacao()">
-
-        
+       
         <fieldset color="red">
         <legend>Dados Pessoais</legend>
          
@@ -97,12 +94,24 @@
         </p>
 
         <p>
-            <input type="submit" name="enviar" value="Enviar inscrição" class="btn"/>
+            <input type="submit" name="enviar" value="Enviar inscrição" onclick="return Validar_form_cadastro()"> <br>
+            <script>
+
+                var Nome= prompt("Por favor, antes de Enviar sua inscrição, confira todos os seus Dados pessoais e seu Endereço!");
+                
+                document.write();
+
+            </script>  
+
             <input type="reset" name="cancelar" value="Cancelar">
 
         </p>
+
+        </body>
 
 
         </fieldset>
 
 
+
+    
