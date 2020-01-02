@@ -1,117 +1,86 @@
 <!DOCTYPE html>
-<html lang= "pt-br">
+<html>
+   <head>
+
+         <style type = "text/css">
+
+            form(width: 300px; background: #ccc; margin: 100px auto.;)
+            
+
+         </style>
+
+         <title>Validar Formulário com JavaScript</title>
+         <meta charset="utf-8">
+         <script type="text/javascript">
+            function validar() {
+                var nome = formcliente.nome.value;
+                var data de nascimento = formcliente.data de nascimento.value;
+                var cpf = formcliente.cpf.value;
+                var endereço = formcliente.endereço.value;
+                var telefone = formcliente.telefone.value;
+
+                if(nome == "") {
+                    alert('Preencha o campo nome.');
+                    formcliente.nome.focus();
+                    return false;
+                }
+
+                if(data de nascimento == "") {
+                    alert('Preencha o campo data de nascimento'.);
+                    formcliente.nome.focus();
+                    return false;
+
+                }
+
+                if(cpf == "") {
+                    alert('Preencha o campo cpf'.);
+                    formcliente.nome.focus();
+                    return false;
+                }
+
+                if(endereço == "") {
+                    alert('Preencha o campo endereço.');
+                    formcliente.nome.focus();
+                    return false;   
+                }
+
+                if(telefone == "") {
+                    alert('Preencha o campo telefone.');
+                    formcliente.nome.focus();
+                    return false;
+                }
+            }
 
 
-<head>
+         </script>
 
-<style type = "text/css">
- 
- form(width: 300px; background: #ccc; margin: 100px auto.;)
+         <style>
 
-</style>
- 
-<meta http-equiv="Content Type" content="text/html"; charset="utf-8"/>
-  <title>Cadastro de clientes</title>
- 
+          form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana, geneva, sans-serif: color:#999;}
 
-<style>
+          form input {padding: 4px; width: 350px; display: block;}
 
-    form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana, geneva, sans-serif: color:#999;}
+          form textarea {width: 354px; display: block;}
 
-    form input {padding: 4px; width: 350px; display: block;}
+          form.btn {width: 150px; cursor: pointer;}
 
-    form textarea {width: 354px; display: block;}
+         </style>
 
-    form.btn {width: 150px; cursor: pointer;}
+        </head>
+        <body>
+        <h1>Cadastro de Cliente</h1>
+        <form name="formcliente" action="enviarhtml" method="POST">
+            Nome:<input type="text" name"Nome" required><br><br>
+            Data de Nascimento:<input type="text" name="Data de Nascimento" required><br><br>
+            CPF:<input type="text" name="CPF" required><br><br>
+            Endereço:<input type="text" name"Endereço" required><br><br>
+            Telefone:<input type="text" name="Telefone" required><br><br>
 
-</style>
-
-</head>
-
-<body>
-
-    <form name="formcadastro" method="post" action="salva_mensagem.html" onsubmit="return Validacao()">
-
-
-    <header>
-
-        <h1>Cadastro de Clientes.</h1>
-
-    </header>
-
-        <h2>Bem vindo!Preencha os dados abaixo.</h2>
-
-       
-        <fieldset color="red">
-        <legend>Dados Pessoais</legend>
-         
-        <p>
-            <label for="Nome">Nome</label>
-            <input type="text" name="Nome">
-            <label for="data de nascimento">Data de nascimento</label>
-            <input type="date" name="data de nascimento">
-        </p>
-
-        <p>
-            <label for="CPF">CPF</label>
-            <input type="number name"="CPF">
-        </p>
-
-        <p>
-            <label for="estado">Estado Civil</label>
-            <input type="radio" name="estado" vallue="1">solteiro
-            <input type="radio" name="estado" value="2">casado
-        </p>
-
-
-         </fieldset>
-
-         <fieldset color="red">
-
-         <legend>Endereço</legend>
-         <p>
-            <label for="CEP"></label>
-            <input type="number" name="CEP">
-         </p>
-
-         <p>
-            <label  for="tipo">tipo</label>
-            <select name="rua">
-            <option value="1">Avenida</option>
-            <option value="2">Rua</option>
-            <option value="3">Alameda</option>
-
-         </select>
-        </p>
-
-        <p>
-            <label for="Logradouro">Logradouro</label>
-            <input type="text" name="Logradouro">
-            <label type="Número">Número</label>
-            <input type="number" name="Número">
-            <label for="complemento">Complemento</label>
-            <input type="text" name="complemento">
-        </p>
-
-        <p>
-            <input type="submit" name="enviar" value="Enviar inscrição" onclick="return Validar_form_cadastro()"> <br>
-            <script>
-
-                var Nome= prompt("Por favor, antes de Enviar sua inscrição, confira todos os seus Dados pessoais e seu Endereço!");
-                
-                document.write();
-
-            </script>  
-
-            <input type="reset" name="cancelar" value="Cancelar">
-
-        </p>
-
+                     <input type="submit" value = Enviar onclick="return validar()">
+        </form>
         </body>
+        </html>
 
 
-        </fieldset>
 
 
-
-    
