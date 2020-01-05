@@ -1,86 +1,111 @@
 <!DOCTYPE html>
 <html>
-   <head>
 
-         <style type = "text/css">
+<head>
 
-            form(width: 300px; background: #ccc; margin: 100px auto.;)
-            
+    <style type="text/css">
+        form(width: 300px;
+        background: #ccc;
+        margin: 100px auto.;
+        )
+    </style>
 
-         </style>
+    <title>Validar Formulário com JavaScript</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function validar() {
+            var nome = formcliente.nome.value;
+            var data_de_nascimento = formcliente.data_de_nascimento.value;
+            var cpf = formcliente.cpf.value;
+            var endereco = formcliente.endereco.value;
+            var telefone = formcliente.telefone.value;
 
-         <title>Validar Formulário com JavaScript</title>
-         <meta charset="utf-8">
-         <script type="text/javascript">
-            function validar() {
-                var nome = formcliente.nome.value;
-                var data de nascimento = formcliente.data de nascimento.value;
-                var cpf = formcliente.cpf.value;
-                var endereço = formcliente.endereço.value;
-                var telefone = formcliente.telefone.value;
-
-                if(nome == "") {
-                    alert('Preencha o campo nome.');
-                    formcliente.nome.focus();
-                    return false;
-                }
-
-                if(data de nascimento == "") {
-                    alert('Preencha o campo data de nascimento'.);
-                    formcliente.nome.focus();
-                    return false;
-
-                }
-
-                if(cpf == "") {
-                    alert('Preencha o campo cpf'.);
-                    formcliente.nome.focus();
-                    return false;
-                }
-
-                if(endereço == "") {
-                    alert('Preencha o campo endereço.');
-                    formcliente.nome.focus();
-                    return false;   
-                }
-
-                if(telefone == "") {
-                    alert('Preencha o campo telefone.');
-                    formcliente.nome.focus();
-                    return false;
-                }
+            if (nome == "") {
+                alert('Preencha o campo nome.');
+                formcliente.nome.focus();
+                return false;
             }
 
+            if (data_de_nascimento == "") {
+                alert('Preencha o campo data_de_nascimento'.);
+                formcliente.nome.focus();
+                return false;
 
-         </script>
+            }
 
-         <style>
+            if (cpf == "") {
+                alert('Preencha o campo cpf'.);
+                formcliente.nome.focus();
+                return false;
+            }
 
-          form {border: 1px solid #ccc float:left; padding: 12px; margin-left:90px; margin-top: 50px; front:16px; verdana, geneva, sans-serif: color:#999;}
+            if (endereco == "") {
+                alert('Preencha o campo endereco.');
+                formcliente.nome.focus();
+                return false;
+            }
 
-          form input {padding: 4px; width: 350px; display: block;}
+            if (telefone == "") {
+                alert('Preencha o campo telefone.');
+                formcliente.nome.focus();
+                return false;
+            }
+        }
+    </script>
 
-          form textarea {width: 354px; display: block;}
+    <style>
+        form {
+            border: 1px solid #ccc float: left;
+            padding: 12px;
+            margin-left: 90px;
+            margin-top: 50px;
+            front: 16px;
+            verdana,
+            geneva,
+            sans-serif: color: #999;
+        }
+        
+        form input {
+            padding: 4px;
+            width: 350px;
+            display: block;
+        }
+        
+        form textarea {
+            width: 354px;
+            display: block;
+        }
+        
+        form.btn {
+            width: 150px;
+            cursor: pointer;
+        }
+    </style>
 
-          form.btn {width: 150px; cursor: pointer;}
+</head>
 
-         </style>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <form name="formcliente" action="enviar.html" method="POST">
+        Nome:
+        <input type="text" name "Nome" required>
+        <br>
+        <br> Data de Nascimento:
+        <input type="text" name="Data de Nascimento" required>
+        <br>
+        <br> CPF:
+        <input type="text" name="CPF" required>
+        <br>
+        <br> Endereço:
+        <input type="text" name "Endereço" required>
+        <br>
+        <br> Telefone:
+        <input type="text" name="Telefone" required>
+        <br>
+        <br>
 
-        </head>
-        <body>
-        <h1>Cadastro de Cliente</h1>
-        <form name="formcliente" action="enviarhtml" method="POST">
-            Nome:<input type="text" name"Nome" required><br><br>
-            Data de Nascimento:<input type="text" name="Data de Nascimento" required><br><br>
-            CPF:<input type="text" name="CPF" required><br><br>
-            Endereço:<input type="text" name"Endereço" required><br><br>
-            Telefone:<input type="text" name="Telefone" required><br><br>
+        <input type="submit" value=E nviar onclick="return validar()">
+    </form>
+</body>
 
-                     <input type="submit" value = Enviar onclick="return validar()">
-        </form>
-        </body>
-        </html>
-
-
-
-
+</html>
