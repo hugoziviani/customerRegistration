@@ -5,16 +5,71 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <style type="text/css">
-        form(width: 300px;
+        form{
+            width: 300px;
             background: #ccc;
-            margin: 100px auto.;
-        )
+            margin: 100px auto;
+        }
     </style>
 
     <title>Validar Formulário com JavaScript</title>
     <meta charset="utf-8">
-    <script type="text/javascript">
+   
 
+    <!-- <style>
+        form {
+            border: 1px solid #ccc;
+            float: left;
+            padding: 12px;
+            margin-left: 90px;
+            margin-top: 50px;
+            font: 16px verdana geneva sans-serif;
+            color: #999;
+        }
+
+        form input {
+            padding: 4px;
+            width: 350px;
+            display: block;
+        }
+
+        form textarea {
+            width: 354px;
+            display: block;
+        }
+
+        form.btn {
+            width: 150px;
+            cursor: pointer;
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <!-- <form name="formcliente" action = "http://127.0.0.1:5000/sendRegistr" method="POST"> -->
+        Nome:
+        <input type="text" name="Nome" id="txtName" required>
+        <br>
+        <br> Data de Nascimento:
+        <input type="text" name="Data_de_Nascimento" id="txtBirthDate" required>
+        <br>
+        <br> CPF:
+        <input type="text" name="CPF" id="txtCpf" required>
+        <br>
+        <br> Endereço:
+        <input type="text" name="Endereco" id="txtAddress" required>
+        <br>
+        <br> Telefone:
+        <input type="text" name="Telefone" id="txtPhone" required>
+        <br>
+        <br>
+    
+        <input type="submit" value=Enviar onclick="return customerSubmit()"> 
+    <!-- </form> -->
+    <script type="text/javascript">
+        const url = "http://127.0.0.1:5000/sendRegistry"
 
         function customersListCallBack(data) {
             console.log(data);
@@ -29,9 +84,34 @@
             var txtPhone = window.document.getElementById('txtPhone');
             txtPhone.value = "os dados txtPhone";
 
-           //   
+            //var text = dados do novo cliente
+            //var obj = JSON.parse(text);
+            //   
         }
-        $.get("http://127.0.0.1:5000/customersList", customersListCallBack)
+
+        function customersListSend() { 
+        }
+        //$.get("http://127.0.0.1:5000/index.html", customersListCallBack)
+        //realiza a requisiçao, e chama esta funcao posterior para tratar os dados retornados
+        function customerSubmit(){
+            //validar()
+            var txtName = window.document.getElementById('txtName');
+            var txtBirthDate = window.document.getElementById('txtBirthDate');
+            var txtCpf = window.document.getElementById('txtCpf');
+            var txtAddress = window.document.getElementById('txtAddress');
+            var txtPhone = window.document.getElementById('txtPhone');
+
+            var customerObjectFromView = {
+                name: txtName.value,
+                birthDay: txtBirthDate.value, //Tratar cast_to DATE-TIME TODO
+                generalRegistry: txtCpf.value,
+                address: txtAddress.value,
+                phoneNumber: txtPhone.value
+            }
+            debugger
+            $.post(url, JSON.stringify(customerObjectFromView), "application/json")
+            debugger
+        }
 
         //TODO: usar JSON() do javascript
 
@@ -74,60 +154,6 @@
             }
         }
     </script>
-
-    <style>
-        form {
-            border: 1px solid #ccc float: left;
-            padding: 12px;
-            margin-left: 90px;
-            margin-top: 50px;
-            front: 16px;
-            verdana,
-            geneva,
-            sans-serif: color: #999;
-        }
-
-        form input {
-            padding: 4px;
-            width: 350px;
-            display: block;
-        }
-
-        form textarea {
-            width: 354px;
-            display: block;
-        }
-
-        form.btn {
-            width: 150px;
-            cursor: pointer;
-        }
-    </style>
-
-</head>
-
-<body>
-    <h1>Cadastro de Cliente</h1>
-    <form name="formcliente" action="enviar.html" method="POST">
-        Nome:
-        <input type="text" name="Nome" id = "txtName" required>
-        <br>
-        <br> Data de Nascimento:
-        <input type="text" name="Data_de_Nascimento" id = "txtBirthDate" required>
-        <br>
-        <br> CPF:
-        <input type="text" name="CPF" id = "txtCpf"  required>
-        <br>
-        <br> Endereço:
-        <input type="text" name="Endereco" id = "txtAddress" required>
-        <br>
-        <br> Telefone:
-        <input type="text" name="Telefone" id = "txtPhone" required>
-        <br>
-        <br>
-
-        <input type="submit" value=Enviar onclick= "return validar()">
-    </form>
 </body>
 
 </html>
